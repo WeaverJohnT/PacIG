@@ -280,6 +280,15 @@
     .photo-strip-item:hover img { transform:scale(1.06); opacity:1; }
     .photo-strip-item::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, transparent 50%, rgba(12,40,64,0.5) 100%); pointer-events:none; }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18108714346"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18108714346');
+  </script>
 </head>
 <body>
 
@@ -311,13 +320,17 @@
         <li><a href="#apply">Apply</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#apply" style="color:var(--amber-bright);font-weight:500;">Get a Quote</a></li>
+        <li><a href="apply.html" target="_blank" style="color:var(--amber-bright);font-weight:500;">Apply Now</a></li>
       </ul>
       <div class="nav-actions">
         <a href="tel:8002541675" class="nav-phone">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.13 9.77a19.79 19.79 0 01-3.07-8.68A2 2 0 012.05 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           800-254-1675
         </a>
+<<<<<<< HEAD
+=======
+        <a href="apply.html" target="_blank" class="btn btn-primary" style="padding:10px 20px;font-size:13px;">Apply Now</a>
+>>>>>>> parent of f517e4f (cleaned up for Google Tracking)
         <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -340,6 +353,13 @@
         </div>
         <h1>Fast real estate loans <em>rooted in Hawaii</em></h1>
         <p class="hero-sub">Hard money and private equity loans for Hawaii investors, buyers, sellers, and developers. Asset-based — your property qualifies the loan, not your paperwork.</p>
+        <div class="hero-actions">
+          <a href="#apply" class="btn btn-primary">
+            Apply in 5 minutes
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#products" class="btn btn-ghost">See loan options</a>
+        </div>
         <div class="hero-stats">
           <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">years lending</div></div>
           <div class="hero-stat"><div class="hero-stat-num">50–75%</div><div class="hero-stat-label">LTV available</div></div>
@@ -643,6 +663,48 @@
           <div><h4>Leasehold &amp; fee simple</h4><p>We understand Hawaii's unique leasehold market and lend on both types across all islands.</p></div>
         </div>
       </div>
+<<<<<<< HEAD
+=======
+      <div class="contact-form">
+        <div id="form-body">
+          <div class="contact-form-header">
+            <svg width="28" height="28" viewBox="0 0 38 38" fill="none" aria-hidden="true">
+              <rect width="38" height="38" rx="8" fill="#0C2840"/>
+              <rect width="38" height="19" rx="8" fill="#C8840F"/>
+              <path d="M7 22 C11 17 15 24 19 19 C23 14 27 21 31 21" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <circle cx="19" cy="10" r="3.5" fill="white"/>
+            </svg>
+            <h3>Loan inquiry</h3>
+          </div>
+          <p class="contact-form-sub">Fill in what you know — we'll handle the rest.</p>
+          <form id="main-form" novalidate>
+            <div class="form-2col">
+              <div class="form-field"><label for="f-fname">First name</label><input type="text" id="f-fname" name="first_name" placeholder="Kai" autocomplete="given-name"/></div>
+              <div class="form-field"><label for="f-lname">Last name</label><input type="text" id="f-lname" name="last_name" placeholder="Nakamura" autocomplete="family-name"/></div>
+            </div>
+            <div class="form-field"><label for="f-phone">Phone number</label><input type="tel" id="f-phone" name="phone" placeholder="(808) 555-0100" autocomplete="tel"/></div>
+            <div class="form-field"><label for="f-email">Email address</label><input type="email" id="f-email" name="email" placeholder="kai@example.com" autocomplete="email"/></div>
+            <div class="form-2col">
+              <div class="form-field"><label for="f-island">Island</label><select id="f-island" name="island"><option value="">Select…</option><option>Oahu</option><option>Maui</option><option>Big Island</option><option>Kauai</option><option>Molokai / Lanai</option></select></div>
+              <div class="form-field"><label for="f-type">Property type</label><select id="f-type" name="property_type"><option value="">Select…</option><option>Single family</option><option>Condo / townhome</option><option>Multi-family</option><option>Commercial</option><option>Land / lot</option></select></div>
+            </div>
+            <div class="form-2col">
+              <div class="form-field"><label for="f-price">Purchase price ($)</label><input type="text" id="f-price" name="purchase_price" placeholder="e.g. 850,000"/></div>
+              <div class="form-field"><label for="f-arv">ARV estimate ($)</label><input type="text" id="f-arv" name="arv" placeholder="e.g. 1,200,000"/></div>
+            </div>
+            <div class="form-field"><label for="f-purpose">Loan purpose</label><select id="f-purpose" name="purpose"><option value="">Select purpose…</option><option>Fix &amp; flip</option><option>Bridge loan</option><option>Construction / new build</option><option>Buy &amp; hold / rental</option><option>Other</option></select></div>
+            <div class="form-field"><label for="f-notes">Additional notes (optional)</label><textarea id="f-notes" name="notes" placeholder="Tell us about the deal, timeline, or your experience as an investor…"></textarea></div>
+            <button type="submit" class="form-submit">Submit inquiry →</button>
+            <p class="form-privacy">Your information is never sold or shared. No bank statements or SSN required.</p>
+          </form>
+        </div>
+        <div class="form-success" id="form-success">
+          <div class="check-circle" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2D7A4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h4>Inquiry received!</h4>
+          <p>We'll review your deal and reach out within one business day. Questions? Call <a href="tel:8002541675" style="color:var(--amber)">800-254-1675</a>.</p>
+        </div>
+      </div>
+>>>>>>> parent of f517e4f (cleaned up for Google Tracking)
     </div>
   </div>
 </section>
