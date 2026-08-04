@@ -331,7 +331,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="#apply">Apply</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#apply" style="color:var(--amber-bright);font-weight:500;">Get a Quote</a></li>
       </ul>
       <div class="nav-actions">
         <a href="tel:8002541675" class="nav-phone">
@@ -940,8 +939,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     data.append('from_name', 'pacig.com Quick Quote');
     fetch('https://api.web3forms.com/submit', { method:'POST', body:data })
       .then(r => r.json())
-      .then(() => document.getElementById('apply').scrollIntoView({ behavior:'smooth', block:'start' }))
-      .catch(() => document.getElementById('apply').scrollIntoView({ behavior:'smooth', block:'start' }));
+      .then(() => window.location.href = '/apply')
+      .catch(() => window.location.href = '/apply');
   });
   function showSuccess() { document.getElementById('form-body').style.display = 'none'; document.getElementById('form-success').style.display = 'block'; }
   document.getElementById('main-form').addEventListener('submit', function(e) {
