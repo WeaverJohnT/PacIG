@@ -328,7 +328,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul class="nav-links" id="nav-links">
         <li><a href="#products">Loan products</a></li>
         <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#apply">Apply</a></li>
+        <li><a href="/apply">Apply</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -939,8 +939,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     data.append('from_name', 'pacig.com Quick Quote');
     fetch('https://api.web3forms.com/submit', { method:'POST', body:data })
       .then(r => r.json())
-      .then(() => window.location.href = '/apply')
-      .catch(() => window.location.href = '/apply');
+      .then(result => {
+        if (result.success) {
+          setTimeout(() => window.location.href = '/apply', 300);
+        } else {
+          alert('Something went wrong — please call us at 800-254-1675.');
+        }
+      })
+      .catch(() => alert('Network error — please call us at 800-254-1675.'));
   });
   function showSuccess() { document.getElementById('form-body').style.display = 'none'; document.getElementById('form-success').style.display = 'block'; }
   document.getElementById('main-form').addEventListener('submit', function(e) {
