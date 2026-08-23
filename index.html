@@ -951,43 +951,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
   fadeEls.forEach(el => observer.observe(el));
   document.getElementById('hero-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const data = new FormData(this);
-    data.append('access_key', '08444a68-bf29-4ce2-85cb-8c7825163eed');
-    data.append('subject', 'Quick Quote Request — Pac I G Capital');
-    data.append('from_name', 'pacig.com Quick Quote');
-    fetch('https://api.web3forms.com/submit', { method:'POST', body:data })
-      .then(r => r.json())
-      .then(result => {
-        if (result.success) {
-          setTimeout(() => window.location.href = '/apply', 300);
-        } else {
-          alert('Something went wrong — please call us at 800-254-1675.');
-        }
-      })
-      .catch(() => alert('Network error — please call us at 800-254-1675.'));
-  });
-  function showSuccess() { document.getElementById('form-body').style.display = 'none'; document.getElementById('form-success').style.display = 'block'; }
-  document.getElementById('main-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const data = new FormData(this);
-    data.append('access_key', '21496da1-e44a-41c4-9388-8bb030a3da12');
-    data.append('subject', 'New Loan Inquiry — Pac I G Capital');
-    data.append('from_name', 'pacig.com Website');
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: data
-    })
+  e.preventDefault();
+  const data = new FormData(this);
+  data.append('access_key', '08444a68-bf29-4ce2-85cb-8c7825163eed');
+  data.append('subject', 'Quick Quote Request — Pac I G Capital');
+  data.append('from_name', 'pacig.com Quick Quote');
+  fetch('https://api.web3forms.com/submit', { method:'POST', body:data })
     .then(r => r.json())
     .then(result => {
       if (result.success) {
-        showSuccess();
+        setTimeout(() => window.location.href = '/apply', 300);
       } else {
         alert('Something went wrong — please call us at 800-254-1675.');
       }
     })
     .catch(() => alert('Network error — please call us at 800-254-1675.'));
-  });
+});
   document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', function(e) { const t = document.querySelector(this.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
 
   // Hero photo Ken Burns
@@ -996,10 +975,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (hp) hp.classList.add('loaded');
   });
 
-  window.addEventListener('load', function() {
-    const hp = document.getElementById('hero-photo');
-    if (hp) hp.classList.add('loaded');
-  });
 </script>
 </body>
 </html>
