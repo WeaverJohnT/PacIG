@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apply for a Loan — Pac I G Capital LLC</title>
-  <meta name="description" content="Apply for a Hawaii hard money or private equity real estate loan with Pac I G Capital LLC. 26-question online application — no bank statements or W-2s required." />
+  <meta name="description" content="Apply for a Hawaii hard money or private equity real estate loan with Pac I G Capital LLC. Find out in about a minute whether you qualify, then finish a short online application." />
   <link rel="canonical" href="https://pacig.com/apply" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230C2840'/%3E%3Cpath d='M12 38 C20 28 28 44 36 34 C44 24 52 40 52 40' fill='none' stroke='%23C8840F' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M12 46 C20 36 28 52 36 42 C44 32 52 48 52 48' fill='none' stroke='%23E8A020' stroke-width='3' stroke-linecap='round' opacity='.5'/%3E%3Ccircle cx='32' cy='22' r='6' fill='%23C8840F'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,8 +69,38 @@
     .form-intro ul { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.9; list-style: none; margin-top: 8px; }
     .form-intro ul li::before { content: '· '; color: var(--amber); font-weight: 700; }
 
-    .jotform-wrap { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.5); }
-    .jotform-wrap iframe { display: block; width: 100%; min-height: 900px; border: none; }
+    .form-card { background: var(--white); color: #1B2A38; border-radius: 16px; box-shadow: 0 24px 80px rgba(0,0,0,0.5); padding: 40px; }
+    @media(max-width:600px){ .form-card { padding: 24px 18px; } }
+    .form-card h2 { font-family: var(--font-display); font-size: 22px; color: var(--navy); font-weight: 400; margin: 34px 0 4px; padding-top: 28px; border-top: 1px solid #E6E2D8; }
+    .form-card h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+    .form-card .sec-note { font-size: 13px; color: var(--gray-600); margin-bottom: 18px; }
+    .field { margin-bottom: 20px; }
+    .field > label, .field > .q { display: block; font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .req { color: #B3261E; margin-left: 2px; }
+    .hint { display: block; font-size: 12.5px; font-weight: 400; color: var(--gray-600); margin-bottom: 7px; line-height: 1.5; }
+    .field input[type=text], .field input[type=email], .field input[type=tel], .field textarea { width: 100%; font: inherit; font-size: 15px; color: #1B2A38; background: #FBFAF7; border: 1px solid #CFCABD; border-radius: 8px; padding: 11px 13px; transition: border-color .15s, box-shadow .15s; }
+    .field textarea { min-height: 96px; resize: vertical; }
+    .field input:focus, .field textarea:focus { outline: none; border-color: var(--amber); box-shadow: 0 0 0 3px rgba(200,132,15,0.18); background: #fff; }
+    .field input.invalid, .field textarea.invalid { border-color: #B3261E; }
+    .err { display: none; color: #B3261E; font-size: 12.5px; margin-top: 5px; }
+    .field.has-error .err { display: block; }
+    .opts { display: grid; gap: 8px; margin-top: 6px; }
+    .opt { display: flex; align-items: center; gap: 10px; font-size: 14.5px; color: #1B2A38; cursor: pointer; padding: 9px 12px; border: 1px solid #E1DCCF; border-radius: 8px; background: #FBFAF7; }
+    .opt:hover { border-color: var(--amber); }
+    .opt input { accent-color: var(--amber); width: 17px; height: 17px; flex-shrink: 0; }
+    .opt input[type=text] { flex: 1; border: none; border-bottom: 1px solid #CFCABD; border-radius: 0; background: transparent; padding: 3px 4px; min-width: 0; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+    @media(max-width:600px){ .two-col { grid-template-columns: 1fr; } }
+    .submit-btn { width: 100%; background: var(--amber); color: #fff; border: none; border-radius: 10px; font: inherit; font-size: 16px; font-weight: 600; padding: 16px; cursor: pointer; margin-top: 8px; transition: background .15s; }
+    .submit-btn:hover { background: var(--amber-bright); }
+    .submit-btn:disabled { opacity: .6; cursor: wait; }
+    .form-fine { font-size: 12px; color: var(--gray-600); text-align: center; margin-top: 12px; line-height: 1.6; }
+    .form-error { display: none; background: #FDECEA; color: #8C1D18; border-radius: 8px; padding: 12px 14px; font-size: 14px; margin-top: 14px; }
+    .success { display: none; text-align: center; padding: 28px 8px; color: #1B2A38; }
+    .success h2 { border: none !important; margin: 14px 0 10px !important; padding: 0 !important; }
+    .success p { font-size: 15px; line-height: 1.7; color: #4A5560; max-width: 480px; margin: 0 auto 8px; }
+    .success a { color: var(--amber); font-weight: 600; text-decoration: none; }
+    .hp { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; }
 
     /* PHOTO STRIP */
     .photo-strip { display: grid; grid-template-columns: repeat(3,1fr); height: 200px; overflow: hidden; }
@@ -88,7 +118,46 @@
     .disclaimer { background: #111920; padding: 16px 40px; }
     @media(max-width:600px){ .disclaimer { padding: 16px 20px; } }
     .disclaimer p { font-size: 11px; color: rgba(255,255,255,0.25); line-height: 1.7; max-width: 880px; margin: 0 auto; }
+    .pq-step { display: none; }
+    .pq-step.active { display: block; animation: pqIn .25s ease; }
+    @keyframes pqIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .pq-progress { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+    .pq-bar { height: 4px; background: #EFEBE0; border-radius: 4px; margin-bottom: 26px; overflow: hidden; }
+    .pq-bar i { display: block; height: 100%; background: var(--amber); transition: width .3s; }
+    .pq-title { font-family: var(--font-display); font-size: 24px; color: var(--navy); font-weight: 400; line-height: 1.25; margin-bottom: 12px; }
+    .pq-info { background: var(--amber-pale); border-left: 4px solid var(--amber); border-radius: 8px; padding: 16px 18px; font-size: 14.5px; line-height: 1.7; color: #4A3A1A; margin-bottom: 22px; }
+    .pq-info p + p { margin-top: 10px; }
+    .pq-actions { display: flex; gap: 12px; align-items: center; margin-top: 22px; flex-wrap: wrap; }
+    .pq-actions .submit-btn { width: auto; margin: 0; padding: 14px 28px; text-decoration: none; display: inline-block; text-align: center; }
+    .pq-back { background: none; border: none; font: inherit; font-size: 14px; color: var(--gray-600); cursor: pointer; padding: 10px 4px; }
+    .pq-back:hover { color: var(--navy); }
+    .pq-stop { text-align: center; padding: 8px 0; }
+    .pq-stop .pq-title { margin-top: 14px; }
+    .pq-stop p { font-size: 15px; line-height: 1.7; color: #4A5560; max-width: 520px; margin: 0 auto 10px; }
+    .pq-stop .pq-actions { justify-content: center; }
+    .pq-stop a.tel { color: var(--amber); font-weight: 600; text-decoration: none; }
+    .pq-ghost { display: inline-block; padding: 13px 22px; border: 1px solid #CFCABD; border-radius: 10px; color: var(--navy); font-size: 15px; font-weight: 500; text-decoration: none; background: #fff; cursor: pointer; font-family: inherit; }
+    .pq-ghost:hover { border-color: var(--amber); }
+    .pq-banner { background: #EAF4EE; border-left: 4px solid #2D7A4F; border-radius: 8px; padding: 14px 18px; font-size: 14.5px; line-height: 1.6; color: #1F4D35; margin-bottom: 22px; }
+    .pq-banner strong { display: block; font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--navy); margin-bottom: 2px; }
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+   !function(f,b,e,v,n,t,s)
+   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+   n.queue=[];t=b.createElement(e);t.async=!0;
+   t.src=v;s=b.getElementsByTagName(e)[0];
+   s.parentNode.insertBefore(t,s)}(window, document,'script',
+   'https://connect.facebook.net/en_US/fbevents.js');
+   fbq('init', '1009638421661741');
+   fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+   src="https://www.facebook.com/tr?id=1009638421661741&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18108714346"></script>
   <script>
@@ -144,9 +213,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-band-photo" aria-hidden="true"></div>
   <div class="hero-band-overlay" aria-hidden="true"></div>
   <div class="hero-band-content">
-    <div class="hero-eyebrow"><div class="hero-dot" aria-hidden="true"></div>Hawaii Private Lender · 20+ years</div>
-    <h1>Quote Request Received, Thank you</h1>
-    <p>26 Question application below takes about 10 minutes</p>
+    <div class="hero-eyebrow"><div class="hero-dot" aria-hidden="true"></div>Pre-qualify in about 1 minute</div>
+    <h1>Apply for a <em>Hawaii loan</em></h1>
+    <p>Save some time &mdash; answer this Pre-Qualification Questionnaire first. If it looks like a fit, the short application follows right on this page.</p>
   </div>
 </div>
 
@@ -161,41 +230,276 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- FORM SECTION -->
 <div class="form-section">
+  <div class="form-card" id="pq-card">
+  <form id="loan-form" novalidate>
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
 
-  <div class="form-intro">
-    <div class="form-intro-mark" aria-hidden="true">
-      <svg width="36" height="36" viewBox="0 0 38 38" fill="none">
-        <rect width="38" height="38" rx="8" fill="#0C2840"/>
-        <rect width="38" height="19" rx="8" fill="#C8840F"/>
-        <path d="M7 22 C11 17 15 24 19 19 C23 14 27 21 31 21" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-        <circle cx="19" cy="10" r="3.5" fill="white"/>
-      </svg>
+    <!-- ===== PRE-QUALIFICATION ===== -->
+
+    <div class="pq-step active" id="s-collateral">
+      <div class="pq-head"></div>
+      <div class="pq-title">Real estate as collateral?</div>
+      <div class="pq-info">
+        <p>Hard money is a real estate&ndash;secured loan. That means we loan larger amounts (<strong>generally $40,000 and up, no maximum</strong>) and put a lien on real estate to secure the loan.</p>
+        <p>We can take a mortgage on a single family home, commercial condo or warehouse, raw land, residential condo, vacation home, commercial lease, &ldquo;tear-down&rdquo; home or business property, leasehold land or property, Hawaiian Homelands, ag land, CPR properties, co-op, rental unit, a property you plan to buy, or a property you plan to build.</p>
+      </div>
+      <div class="field" data-radio="collateral">
+        <span class="q">Hard money loans are secured by real estate. Do you (or a family member or friend) have a property we can use as collateral? <span class="req">*</span></span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="collateral" value="Yes" /> Yes</label>
+          <label class="opt"><input type="radio" name="collateral" value="No" /> No</label>
+          <label class="opt"><input type="radio" name="collateral" value="Maybe" /> Maybe</label>
+        </div>
+        <div class="err">Please choose one to continue.</div>
+      </div>
+      <div class="pq-actions"><button type="button" class="submit-btn" data-next>Continue</button></div>
     </div>
-    <div>
-      <h3>What to expect</h3>
-      <p>This application covers your loan request, collateral property details, and contact information — 26 questions total. Most applicants complete it in under 10 minutes.</p>
-      <ul>
-        <li>Hard money typically costs 1% per month, interest-only</li>
-        <li>Closes in approximately 15 business days from retainer</li>
-        <li>A $1,000 retainer is required to start paperwork ($1,500 outer islands)</li>
-        <li>We won't ask for any money until a lender is ready to move forward</li>
-      </ul>
+
+    <div class="pq-step" id="s-equity">
+      <div class="pq-head"></div>
+      <div class="pq-title">Is there any room (equity) for us to loan?</div>
+      <p class="sec-note">If you don't know, guess or skip.</p>
+      <div class="two-col">
+        <div class="field"><label for="tax_value">Roughly the tax value of the property</label><input type="text" id="tax_value" name="tax_value" inputmode="decimal" placeholder="$" /></div>
+        <div class="field"><label for="appraised_value">Appraised value, or your best guess</label><input type="text" id="appraised_value" name="appraised_value" inputmode="decimal" placeholder="$" /></div>
+        <div class="field"><label for="first_mortgage">First mortgage, if any</label><input type="text" id="first_mortgage" name="first_mortgage" inputmode="decimal" placeholder="$" /></div>
+        <div class="field"><label for="second_mortgage">2nd mortgage, if any</label><input type="text" id="second_mortgage" name="second_mortgage" inputmode="decimal" placeholder="$" /></div>
+        <div class="field"><label for="third_mortgage">3rd mortgage, if any</label><input type="text" id="third_mortgage" name="third_mortgage" inputmode="decimal" placeholder="$" /></div>
+      </div>
+      <div class="pq-actions"><button type="button" class="submit-btn" data-next>Continue</button><button type="button" class="pq-back" data-back>&larr; Back</button></div>
+    </div>
+
+    <div class="pq-step" id="s-type">
+      <div class="pq-head"></div>
+      <div class="pq-title">Type of collateral / real estate available?</div>
+      <div class="pq-info"><p>Our smallest hard money loans generally start around $40,000, secured by a 1st or 2nd mortgage on Hawaii real estate on all islands.</p></div>
+      <div class="field">
+        <span class="q">Check all that apply</span>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" name="collateral_type[]" value="Residential home" /> Residential home</label>
+          <label class="opt"><input type="checkbox" name="collateral_type[]" value="Rental home" /> Rental home</label>
+          <label class="opt"><input type="checkbox" name="collateral_type[]" value="My primary residence" /> My primary residence</label>
+          <label class="opt"><input type="checkbox" name="collateral_type[]" value="Rental property" /> Rental property</label>
+          <label class="opt"><input type="checkbox" name="collateral_type[]" value="Owned by a trust or LLC" /> Owned by a trust or LLC</label>
+          <label class="opt"><input type="checkbox" name="collateral_type[]" value="Raw land" /> Raw land</label>
+          <label class="opt"><input type="checkbox" name="collateral_type[]" value="Commercial lease" /> Commercial lease</label>
+          <label class="opt"><input type="checkbox" name="collateral_type[]" value="Condominium" /> Condominium</label>
+          <label class="opt"><input type="checkbox" name="collateral_type[]" value="Commercial condominium" /> Commercial condominium</label>
+          <label class="opt"><input type="checkbox" name="collateral_type[]" value="Leasehold property" /> Leasehold property</label>
+          <label class="opt"><input type="checkbox" name="collateral_type[]" value="Fee simple property" /> Fee simple property</label>
+          <label class="opt"><input type="checkbox" id="ct_other_cb" /> Other: <input type="text" id="ct_other_txt" aria-label="Other collateral" /></label>
+        </div>
+      </div>
+      <div class="pq-actions"><button type="button" class="submit-btn" data-next>Continue</button><button type="button" class="pq-back" data-back>&larr; Back</button></div>
+    </div>
+
+    <div class="pq-step" id="s-amount">
+      <div class="pq-head"></div>
+      <div class="pq-title">How much do you need to borrow?</div>
+      <div class="field" data-radio="loan_range">
+        <span class="q">Choose one <span class="req">*</span></span>
+        <span class="hint">Most loans start around $40,000.</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="loan_range" value="Less than $25,000" /> Less than $25,000</label>
+          <label class="opt"><input type="radio" name="loan_range" value="Over $25,000 and less than $50,000" /> Over $25,000 and less than $50,000</label>
+          <label class="opt"><input type="radio" name="loan_range" value="$50,000 to $100,000" /> $50,000 to $100,000</label>
+          <label class="opt"><input type="radio" name="loan_range" value="Between $100K and $500K" /> Between $100K and $500K</label>
+          <label class="opt"><input type="radio" name="loan_range" value="$500K to $1MM" /> $500K to $1MM</label>
+          <label class="opt"><input type="radio" name="loan_range" value="Over $1MM" /> Over $1MM</label>
+        </div>
+        <div class="err">Please choose one to continue.</div>
+      </div>
+      <div class="pq-actions"><button type="button" class="submit-btn" data-next>Continue</button><button type="button" class="pq-back" data-back>&larr; Back</button></div>
+    </div>
+
+    <div class="pq-step" id="s-sense">
+      <div class="pq-head"></div>
+      <div class="pq-title">Does it make financial sense?</div>
+      <div class="pq-info">
+        <p>Hawaii hard money costs <strong>1% per month, interest-only</strong>, and takes about <strong>15 business days</strong> to close, start to finish.</p>
+        <p>Hard money is fast and easy to obtain, but it is not cheap.</p>
+      </div>
+      <div class="pq-actions"><button type="button" class="submit-btn" data-next>That works for me</button><button type="button" class="pq-back" data-back>&larr; Back</button></div>
+    </div>
+
+    <!-- ===== ONLINE LOAN APPLICATION ===== -->
+
+    <div class="pq-step" id="s-contact">
+      <div class="pq-head"></div>
+      <div class="pq-banner"><strong>Online Loan Application</strong>Good news &mdash; you may qualify. A few more details and you're done. Fields marked <span class="req">*</span> are required.</div>
+
+      <div class="field">
+        <label for="referred_by">Who referred you?</label>
+        <span class="hint">Were you referred by a broker? Tell us what you can so we can thank them &mdash; name, email address, phone number, description. It is important for us to let them know we appreciate them!</span>
+        <textarea id="referred_by" name="referred_by"></textarea>
+      </div>
+      <div class="field">
+        <label for="borrower_name">Borrower name <span class="req">*</span></label>
+        <span class="hint">The legal name of the borrower</span>
+        <input type="text" id="borrower_name" name="borrower_name" autocomplete="name" required />
+        <div class="err">Please enter the borrower's legal name.</div>
+      </div>
+      <div class="two-col">
+        <div class="field">
+          <label for="email">Borrower email address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required />
+          <div class="err">Please enter a valid email address.</div>
+        </div>
+        <div class="field">
+          <label for="email_confirm">Confirm email address <span class="req">*</span></label>
+          <input type="email" id="email_confirm" autocomplete="off" required />
+          <div class="err">The email addresses don't match.</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="phone">Borrower phone number(s) <span class="req">*</span></label>
+        <span class="hint">Home, office, cell, etc.</span>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" required />
+        <div class="err">Please enter a phone number.</div>
+      </div>
+      <div class="pq-actions"><button type="button" class="submit-btn" data-next>Continue</button><button type="button" class="pq-back" data-back>&larr; Back</button></div>
+    </div>
+
+    <div class="pq-step" id="s-property">
+      <div class="pq-head"></div>
+      <div class="pq-title">The property</div>
+      <p class="sec-note">Hard money is secured by a first or second mortgage against a property.</p>
+      <div class="field">
+        <label for="property_street">Street number and name of property <span class="req">*</span></label>
+        <span class="hint">Example: 123 Main Street</span>
+        <input type="text" id="property_street" name="property_street" required />
+        <div class="err">Please enter the property address.</div>
+      </div>
+      <div class="field">
+        <label for="property_city_state_zip">City, state and zip of the property <span class="req">*</span></label>
+        <input type="text" id="property_city_state_zip" name="property_city_state_zip" required />
+        <div class="err">Please enter the city, state and zip.</div>
+      </div>
+      <div class="field">
+        <label for="title_owner">Who legally owns the subject property?</label>
+        <span class="hint">What name will we find on the title (person, couple, trust, business, etc.)</span>
+        <input type="text" id="title_owner" name="title_owner" />
+      </div>
+      <div class="field">
+        <label for="cross_collateral">What other property do you have for &ldquo;cross-collateralization&rdquo;?</label>
+        <span class="hint">Sometimes, if the LTV (loan to value) is too high, we need to cross-collateralize with another property.</span>
+        <textarea id="cross_collateral" name="cross_collateral"></textarea>
+      </div>
+      <div class="pq-actions"><button type="button" class="submit-btn" data-next>Continue</button><button type="button" class="pq-back" data-back>&larr; Back</button></div>
+    </div>
+
+    <div class="pq-step" id="s-loan">
+      <div class="pq-head"></div>
+      <div class="pq-title">The loan</div>
+      <p class="sec-note">Tell us what you need and how you plan to repay it.</p>
+      <div class="two-col">
+        <div class="field">
+          <label for="min_loan">Minimum loan amount you will accept <span class="req">*</span></label>
+          <input type="text" id="min_loan" name="min_loan_amount" inputmode="decimal" placeholder="$" required />
+          <div class="err">Please enter an amount.</div>
+        </div>
+        <div class="field">
+          <label for="max_loan">Maximum loan amount you desire <span class="req">*</span></label>
+          <input type="text" id="max_loan" name="max_loan_amount" inputmode="decimal" placeholder="$" required />
+          <div class="err">Please enter an amount.</div>
+        </div>
+      </div>
+      <div class="field" data-radio="funds_needed">
+        <span class="q">How long will you need the funds? <span class="req">*</span></span>
+        <span class="hint">Choose the one that is most true</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="funds_needed" value="Less than 2 months" /> Less than 2 months</label>
+          <label class="opt"><input type="radio" name="funds_needed" value="2 to 4 months" /> From 2 to 4 months</label>
+          <label class="opt"><input type="radio" name="funds_needed" value="4 to 6 months" /> From 4 to 6 months</label>
+          <label class="opt"><input type="radio" name="funds_needed" value="6 months to a year" /> From 6 months to a year</label>
+          <label class="opt"><input type="radio" name="funds_needed" value="Longer than a year" /> Longer than a year</label>
+          <label class="opt"><input type="radio" name="funds_needed" value="Other" /> Other: <input type="text" data-other="funds_needed" aria-label="Other length of time" /></label>
+        </div>
+        <div class="err">Please choose one.</div>
+      </div>
+      <div class="field">
+        <label for="loan_purpose">Why do you (borrower) need the money? <span class="req">*</span></label>
+        <span class="hint">Please be specific.</span>
+        <textarea id="loan_purpose" name="loan_purpose" required></textarea>
+        <div class="err">Please tell us why you need the funds.</div>
+      </div>
+      <div class="field">
+        <label for="repayment_plan">How do you plan to pay back the money? <span class="req">*</span></label>
+        <span class="hint">Please be specific.</span>
+        <textarea id="repayment_plan" name="repayment_plan" required></textarea>
+        <div class="err">Please tell us your repayment plan.</div>
+      </div>
+      <div class="field">
+        <label for="other_info">Other information, other important notes, etc.</label>
+        <span class="hint">If the property is under construction, in foreclosure, owner under agreement of sale, oceanfront, an apartment unit (what % occupied), currently listed on the MLS for sale, etc. (be specific)</span>
+        <textarea id="other_info" name="other_info"></textarea>
+      </div>
+      <div class="pq-actions"><button type="button" class="submit-btn" data-next>Continue</button><button type="button" class="pq-back" data-back>&larr; Back</button></div>
+    </div>
+
+    <div class="pq-step" id="s-final">
+      <div class="pq-head"></div>
+      <div class="pq-title">Almost done</div>
+      <p class="sec-note">Two quick things to be sure we're on the same page.</p>
+      <div class="field" data-radio="ack_retainer">
+        <span class="q">Do you understand that the real estate attorneys will require a $1,000 retainer/deposit to start the paperwork on this loan? <span class="req">*</span></span>
+        <span class="hint">Postal money order preferred; a check is acceptable but slows the process down. (Required only if we expect to fund the loan.) The retainer is $1,500 on the outer islands.</span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="ack_retainer" value="Yes" /> Yes</label>
+          <label class="opt"><input type="radio" name="ack_retainer" value="No" /> No</label>
+          <label class="opt"><input type="radio" name="ack_retainer" value="Other" /> Other: <input type="text" data-other="ack_retainer" aria-label="Other answer" /></label>
+        </div>
+        <div class="err">Please choose one.</div>
+      </div>
+      <div class="field" data-radio="ack_timing">
+        <span class="q">Do you understand that it takes 15 business days (3 weeks) from the date of the retainer/deposit to get the money to you? <span class="req">*</span></span>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="ack_timing" value="Yes" /> Yes</label>
+          <label class="opt"><input type="radio" name="ack_timing" value="No" /> No</label>
+          <label class="opt"><input type="radio" name="ack_timing" value="Other" /> Other: <input type="text" data-other="ack_timing" aria-label="Other answer" /></label>
+        </div>
+        <div class="err">Please choose one.</div>
+      </div>
+      <div class="field">
+        <span class="q">Which of these will you be sending us?</span>
+        <span class="hint">Check all that apply. We'll follow up with you on where to send them.</span>
+        <div class="opts">
+          <label class="opt"><input type="checkbox" name="docs_to_send[]" value="Borrower 1003 filled out" /> Borrower 1003 filled out</label>
+          <label class="opt"><input type="checkbox" name="docs_to_send[]" value="Pictures of property" /> Pictures of property</label>
+          <label class="opt"><input type="checkbox" name="docs_to_send[]" value="Old or new appraisal" /> Old or new appraisal</label>
+          <label class="opt"><input type="checkbox" name="docs_to_send[]" value="Other important documents" /> Other important documents</label>
+          <label class="opt"><input type="checkbox" id="docs_other_cb" /> Other: <input type="text" id="docs_other_txt" aria-label="Other documents" /></label>
+        </div>
+      </div>
+      <div class="pq-actions"><button type="submit" class="submit-btn" id="submit-btn">Submit application</button><button type="button" class="pq-back" data-back>&larr; Back</button></div>
+      <div class="form-error" id="form-error" role="alert">Something went wrong sending your application. Please call us at <a href="tel:8002541675">800-254-1675</a> and we'll take it by phone.</div>
+      <p class="form-fine">Please don't include passwords, Social Security numbers or bank account numbers in this form.</p>
+    </div>
+
+    <!-- ===== STOP SCREENS ===== -->
+
+    <div class="pq-step pq-stop" id="s-stop-collateral">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#FDF3E3"/><path d="M28 16v16M28 38v2" stroke="#C8840F" stroke-width="3.5" stroke-linecap="round"/></svg>
+      <div class="pq-title">Real estate required</div>
+      <p>I'm sorry, but we don't do personal loans. You're welcome to call the office anyway at <a class="tel" href="tel:8002541675">800-254-1675</a> &mdash; we might know where to send you &mdash; but we only do real estate&ndash;based loans.</p>
+      <div class="pq-actions"><button type="button" class="pq-ghost" data-restart>Change my answer</button><a class="pq-ghost" href="https://pacig.com">Back to site</a></div>
+    </div>
+
+    <div class="pq-step pq-stop" id="s-stop-small">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#FDF3E3"/><path d="M28 16v16M28 38v2" stroke="#C8840F" stroke-width="3.5" stroke-linecap="round"/></svg>
+      <div class="pq-title">Our smallest loans start around $40,000</div>
+      <p>I'm sorry, but we don't do loans that small. You're welcome to call the office anyway at <a class="tel" href="tel:8002541675">800-254-1675</a> &mdash; we might know where to send you &mdash; but we only do real estate&ndash;based loans, and our minimum fees don't make sense for a loan that small.</p>
+      <div class="pq-actions"><button type="button" class="pq-ghost" data-restart>Change my answer</button><a class="pq-ghost" href="https://pacig.com">Back to site</a></div>
+    </div>
+  </form>
+
+    <div class="success" id="form-success" role="status">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#EAF4EE"/><path d="M17 29l8 8 14-16" stroke="#2D7A4F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h2>Application received &mdash; thank you!</h2>
+      <p>We'll review your request and contact you shortly. For the fastest service, give the office a call about an hour from now at <a href="tel:8002541675">800-254-1675</a>.</p>
     </div>
   </div>
-
-  <!-- JOTFORM EMBED -->
-  <div class="jotform-wrap">
-    <iframe
-      id="JotFormIFrame-240036322954148"
-      title="Pac I G Capital LLC Loan Application"
-      src="https://form.jotform.com/240036322954148"
-      allowtransparency="true"
-      allowfullscreen="true"
-      allow="geolocation; microphone; camera"
-      scrolling="yes"
-    ></iframe>
-  </div>
-
+  <p class="form-fine" style="color:rgba(255,255,255,0.45)" id="pq-note">Nothing is sent to us until you press &ldquo;Submit application&rdquo; at the very end.</p>
 </div>
 
 <!-- PHOTO STRIP -->
@@ -227,18 +531,129 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script>
-  // Auto-resize JotForm iframe as user progresses through questions
-  window.addEventListener('message', function(e) {
-    if (!e.data) return;
-    var data = (typeof e.data === 'string') ? (function(){ try{ return JSON.parse(e.data); } catch(x){ return {}; } })() : e.data;
-    if (data.action === 'setHeight' && data.height) {
-      var iframe = document.getElementById('JotFormIFrame-240036322954148');
-      if (iframe) {
-        var h = parseInt(data.height);
-        iframe.style.minHeight = (h > 400 ? h : 900) + 'px';
-      }
+  (function () {
+    var form = document.getElementById('loan-form');
+    var card = document.getElementById('pq-card');
+    var btn = document.getElementById('submit-btn');
+    var errBox = document.getElementById('form-error');
+    var order = ['collateral', 'equity', 'type', 'amount', 'sense', 'contact', 'property', 'loan', 'final'];
+    var hist = [];
+
+    function el(id) { return document.getElementById('s-' + id); }
+    function curId() { return card.querySelector('.pq-step.active').id.slice(2); }
+    function track(ev) { if (window.gtag) { try { gtag('event', ev); } catch (x) {} } }
+    function val(name) { var r = form.querySelector('input[name="' + name + '"]:checked'); return r ? r.value : null; }
+
+    order.forEach(function (id, i) {
+      var label = i < 5 ? 'Pre-qualification · Question ' + (i + 1) + ' of 5' : 'Application · Step ' + (i - 4) + ' of 4';
+      el(id).querySelector('.pq-head').innerHTML =
+        '<div class="pq-progress">' + label + '</div><div class="pq-bar"><i style="width:' + Math.round((i + 1) / order.length * 100) + '%"></i></div>';
+    });
+
+    function show(id, push) {
+      if (push) hist.push(curId());
+      card.querySelectorAll('.pq-step').forEach(function (s) { s.classList.toggle('active', s.id === 's-' + id); });
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  });
+
+    function setErr(node, bad) {
+      var f = node.closest('.field');
+      node.classList.toggle('invalid', bad);
+      if (f) f.classList.toggle('has-error', bad);
+    }
+
+    function validate(id) {
+      var step = el(id), ok = true;
+      step.querySelectorAll('input[required], textarea[required]').forEach(function (n) {
+        var bad = !n.value.trim() || (n.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(n.value.trim()));
+        setErr(n, bad); if (bad) ok = false;
+      });
+      if (id === 'contact') {
+        var a = document.getElementById('email'), b = document.getElementById('email_confirm');
+        if (a.value.trim() && b.value.trim() && a.value.trim().toLowerCase() !== b.value.trim().toLowerCase()) { setErr(b, true); ok = false; }
+      }
+      step.querySelectorAll('.field[data-radio]').forEach(function (f) {
+        var bad = !val(f.getAttribute('data-radio'));
+        f.classList.toggle('has-error', bad); if (bad) ok = false;
+      });
+      if (!ok) { var first = step.querySelector('.has-error, .invalid'); if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      return ok;
+    }
+
+    function next() {
+      var id = curId();
+      if (!validate(id)) return;
+      if (id === 'collateral' && val('collateral') === 'No') { track('prequal_disqualified_no_collateral'); return show('stop-collateral', true); }
+      if (id === 'amount' && val('loan_range') === 'Less than $25,000') { track('prequal_disqualified_too_small'); return show('stop-small', true); }
+      if (id === 'sense') track('prequal_passed');
+      show(order[order.indexOf(id) + 1], true);
+    }
+
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('[data-next]')) { next(); return; }
+      if (e.target.closest('[data-back]')) { var p = hist.pop(); if (p) show(p, false); return; }
+      if (e.target.closest('[data-restart]')) { var p2 = hist.pop(); show(p2 || 'collateral', false); return; }
+    });
+
+    // "Other" text boxes select their own radio / checkbox
+    form.querySelectorAll('input[data-other]').forEach(function (t) {
+      t.addEventListener('focus', function () {
+        var r = form.querySelector('input[name="' + t.getAttribute('data-other') + '"][value="Other"]');
+        if (r) r.checked = true;
+      });
+    });
+    [['ct_other_txt', 'ct_other_cb'], ['docs_other_txt', 'docs_other_cb']].forEach(function (p) {
+      document.getElementById(p[0]).addEventListener('focus', function () { document.getElementById(p[1]).checked = true; });
+    });
+    form.addEventListener('input', function (e) { if (e.target.classList.contains('invalid')) setErr(e.target, false); });
+    form.addEventListener('change', function (e) { var f = e.target.closest('.field'); if (f) f.classList.remove('has-error'); });
+
+    function joinChecks(data, key, otherCb, otherTxt, outKey, emptyText) {
+      var list = data.getAll(key);
+      data.delete(key);
+      if (document.getElementById(otherCb).checked) list.push('Other: ' + (document.getElementById(otherTxt).value.trim() || '(no detail given)'));
+      data.set(outKey, list.length ? list.join(', ') : emptyText);
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (curId() !== 'final') { next(); return; }   // Enter key on an earlier step = Continue
+      errBox.style.display = 'none';
+      if (!validate('final')) return;
+
+      var data = new FormData(form);
+      form.querySelectorAll('input[data-other]').forEach(function (t) {
+        var name = t.getAttribute('data-other');
+        if (data.get(name) === 'Other') data.set(name, 'Other: ' + (t.value.trim() || '(no detail given)'));
+      });
+      joinChecks(data, 'collateral_type[]', 'ct_other_cb', 'ct_other_txt', 'collateral_types', 'None selected');
+      joinChecks(data, 'docs_to_send[]', 'docs_other_cb', 'docs_other_txt', 'documents_to_send', 'None selected');
+      data.set('prequalification', 'Passed online pre-qualification');
+
+      data.append('access_key', '21496da1-e44a-41c4-9388-8bb030a3da12');
+      data.append('subject', 'New Loan Application — ' + (data.get('borrower_name') || 'Pac I G Capital'));
+      data.append('from_name', 'pacig.com Loan Application');
+
+      btn.disabled = true; btn.textContent = 'Sending…';
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+        .then(function (r) { return r.json(); })
+        .then(function (result) {
+          if (result.success) {
+            form.style.display = 'none';
+            document.getElementById('pq-note').style.display = 'none';
+            var s = document.getElementById('form-success');
+            s.style.display = 'block';
+            s.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            track('loan_application_submitted');
+            if (window.fbq) { try { fbq('track', 'Lead'); } catch (x) {} }
+          } else { throw new Error('rejected'); }
+        })
+        .catch(function () {
+          errBox.style.display = 'block';
+          btn.disabled = false; btn.textContent = 'Submit application';
+        });
+    });
+  })();
 </script>
 </body>
 </html>
