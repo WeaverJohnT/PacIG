@@ -92,8 +92,6 @@
     .nav-links a:hover { color:var(--white); background:rgba(255,255,255,0.07); }
     .nav-links a.nav-qualify { background:var(--amber); color:var(--white); font-weight:600; box-shadow:0 2px 8px rgba(200,132,15,0.35); }
     .nav-links a.nav-qualify:hover { background:var(--amber-bright); color:var(--white); }
-    .nav-links a.nav-more { color:var(--amber-bright); font-weight:600; border:1px solid rgba(255,255,255,0.28); }
-    .nav-links a.nav-more:hover { color:var(--white); border-color:var(--amber-bright); background:rgba(200,132,15,0.18); }
     .nav-phone { font-size:13px; font-weight:600; color:var(--amber-bright); text-decoration:none; display:flex; align-items:center; gap:6px; }
     .nav-phone:hover { color:var(--white); }
     .nav-actions { display:flex; align-items:center; gap:12px; }
@@ -120,7 +118,10 @@
     @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
     .hero h1 { font-family:var(--font-display); font-size:clamp(38px,5.5vw,58px); line-height:1.08; color:var(--white); margin-bottom:22px; letter-spacing:-0.5px; }
     .hero h1 em { color:var(--amber-bright); font-style:normal; }
-    .hero-sub { font-size:17px; color:rgba(255,255,255,0.62); max-width:480px; line-height:1.75; margin-bottom:36px; }
+    .hero-sub { font-size:17px; color:rgba(255,255,255,0.62); max-width:480px; line-height:1.75; margin-bottom:20px; }
+    .hero-biz { max-width:480px; text-align:center; margin-bottom:36px; }
+    .hero-biz a { display:inline-block; padding:12px 28px; border:1.5px solid var(--amber-bright); border-radius:var(--r-md); color:var(--amber-bright); font-size:15px; font-weight:600; text-decoration:none; transition:all 0.15s; }
+    .hero-biz a:hover { background:rgba(200,132,15,0.18); color:var(--white); }
     .hero-actions { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:56px; }
     .hero-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid rgba(255,255,255,0.1); padding-top:36px; }
     @media(max-width:600px){.hero-stats{grid-template-columns:repeat(2,1fr);gap:20px;}}
@@ -368,7 +369,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="#how-it-works">How it works</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="https://funding.pacig.com" class="nav-more" rel="noopener">Business Funding &rarr;</a></li>
         <li><a href="/apply" class="nav-qualify">Apply now</a></li>
       </ul>
       <div class="nav-actions">
@@ -398,6 +398,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <h1>Fast real estate loans <em>rooted in Hawaii</em></h1>
         <p class="hero-sub">Hard money and private equity loans for Hawaii investors, buyers, sellers, and developers. Asset-based — your property qualifies the loan, not your paperwork.</p>
+        <div class="hero-biz"><a href="https://funding.pacig.com" rel="noopener">Need a Business Loan?</a></div>
         <div class="hero-stats">
           <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">years lending</div></div>
           <div class="hero-stat"><div class="hero-stat-num">50–75%</div><div class="hero-stat-label">LTV available</div></div>
