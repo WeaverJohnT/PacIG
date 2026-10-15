@@ -35,6 +35,12 @@
     .header-back:hover { color: var(--amber-bright); }
     .header-phone { font-size: 13px; font-weight: 600; color: var(--amber-bright); text-decoration: none; display: flex; align-items: center; gap: 6px; }
     .header-phone:hover { color: var(--white); }
+    .header-biz { font-size: 13px; font-weight: 600; color: var(--amber-bright); text-decoration: none; border: 1.5px solid var(--amber-bright); border-radius: 8px; padding: 6px 14px; white-space: nowrap; transition: all 0.15s; }
+    .header-biz:hover { background: rgba(200,132,15,0.18); color: var(--white); }
+    .header-biz .biz-short { display: none; }
+    @media(max-width:700px){ .header-biz .biz-long { display: none; } .header-biz .biz-short { display: inline; } .header-biz { padding: 5px 10px; font-size: 12px; } .header-right { gap: 12px; } }
+    .header-phone, .header-logo div { white-space: nowrap; }
+    @media(max-width:430px){ .header-back { display: none; } .header { padding: 0 14px; } .header-right { gap: 10px; } .header-phone svg { display: none; } .logo-wordmark-sub { display: none; } }
 
     /* HERO BAND */
     .hero-band { background: var(--navy); position: relative; overflow: hidden; padding: 56px 40px 48px; text-align: center; }
@@ -211,6 +217,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
       Back to site
     </a>
+    <a href="https://funding.pacig.com" class="header-biz" rel="noopener"><span class="biz-long">Need a Business Loan?</span><span class="biz-short">Business Loan?</span></a>
     <a href="tel:8085232000" class="header-phone">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.13 9.77a19.79 19.79 0 01-3.07-8.68A2 2 0 012.05 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       808-523-2000
