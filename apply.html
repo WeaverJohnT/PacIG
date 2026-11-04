@@ -133,6 +133,8 @@
     .pq-title { font-family: var(--font-display); font-size: 24px; color: var(--navy); font-weight: 400; line-height: 1.25; margin-bottom: 12px; }
     .pq-info { background: var(--amber-pale); border-left: 4px solid var(--amber); border-radius: 8px; padding: 16px 18px; font-size: 14.5px; line-height: 1.7; color: #4A3A1A; margin-bottom: 22px; }
     .pq-info p + p { margin-top: 10px; }
+    .pq-list { margin: 8px 0 0 20px; padding: 0; }
+    .pq-list li { margin-bottom: 4px; }
     .pq-actions { display: flex; gap: 12px; align-items: center; margin-top: 22px; flex-wrap: wrap; }
     .pq-actions .submit-btn { width: auto; margin: 0; padding: 14px 28px; text-decoration: none; display: inline-block; text-align: center; }
     .pq-back { background: none; border: none; font: inherit; font-size: 14px; color: var(--gray-600); cursor: pointer; padding: 10px 4px; }
@@ -232,7 +234,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-band-content">
     <div class="hero-eyebrow"><div class="hero-dot" aria-hidden="true"></div>Pre-qualify in about 1 minute</div>
     <h1>Apply for a <em>Hawaii loan</em></h1>
-    <p>Save some time &mdash; answer this Pre-Qualification Questionnaire first. If it looks like a fit, the short application follows right on this page.</p>
+    <p>Answer five quick questions to see if you qualify. If it's a good fit, a short application follows on this page.</p>
   </div>
 </div>
 
@@ -255,13 +257,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="pq-step active" id="s-collateral">
       <div class="pq-head"></div>
-      <div class="pq-title">Real estate as collateral?</div>
+      <div class="pq-title">Flexible Real Estate-Backed Financing</div>
       <div class="pq-info">
-        <p>Hard money is a real estate&ndash;secured loan. That means we loan larger amounts (<strong>generally $40,000 and up, no maximum</strong>) and put a lien on real estate to secure the loan.</p>
-        <p>We can take a mortgage on a single family home, commercial condo or warehouse, raw land, residential condo, vacation home, commercial lease, &ldquo;tear-down&rdquo; home or business property, leasehold land or property, Hawaiian Homelands, ag land, CPR properties, co-op, rental unit, a property you plan to buy, or a property you plan to build.</p>
+        <p>A hard money loan is secured directly by real estate, allowing us to provide larger funding amounts&mdash;<strong>starting at $40,000 with no maximum limit</strong>.</p>
+        <p>We can secure your loan against a wide variety of property types, including:</p>
+        <ul class="pq-list">
+          <li>Single-family homes and residential condos</li>
+          <li>Commercial condos, warehouses, and business properties</li>
+          <li>Raw land, agricultural land, and leasehold land</li>
+          <li>Vacation homes and rental units</li>
+          <li>Specialty properties like Hawaiian Homelands, CPR properties, and co-ops</li>
+          <li>&ldquo;Tear-down&rdquo; homes, as well as properties you plan to purchase or build</li>
+        </ul>
       </div>
       <div class="field" data-radio="collateral">
-        <span class="q">Hard money loans are secured by real estate. Do you (or a family member or friend) have a property we can use as collateral? <span class="req">*</span></span>
+        <span class="q">Do you (or a family member or friend) own real estate we can use as collateral? <span class="req">*</span></span>
         <div class="opts">
           <label class="opt"><input type="radio" name="collateral" value="Yes" /> Yes</label>
           <label class="opt"><input type="radio" name="collateral" value="No" /> No</label>
@@ -274,24 +284,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="pq-step" id="s-equity">
       <div class="pq-head"></div>
-      <div class="pq-title">Is there any room (equity) for us to loan?</div>
-      <p class="sec-note">If you don't know, guess or skip.</p>
+      <div class="pq-title">How much equity does the property have?</div>
+      <p class="sec-note">Estimates are fine. Skip anything you don't know.</p>
       <div class="two-col">
-        <div class="field"><label for="tax_value">Roughly the tax value of the property</label><input type="text" id="tax_value" name="tax_value" inputmode="decimal" placeholder="$" /></div>
-        <div class="field"><label for="appraised_value">Appraised value, or your best guess</label><input type="text" id="appraised_value" name="appraised_value" inputmode="decimal" placeholder="$" /></div>
-        <div class="field"><label for="first_mortgage">First mortgage, if any</label><input type="text" id="first_mortgage" name="first_mortgage" inputmode="decimal" placeholder="$" /></div>
-        <div class="field"><label for="second_mortgage">2nd mortgage, if any</label><input type="text" id="second_mortgage" name="second_mortgage" inputmode="decimal" placeholder="$" /></div>
-        <div class="field"><label for="third_mortgage">3rd mortgage, if any</label><input type="text" id="third_mortgage" name="third_mortgage" inputmode="decimal" placeholder="$" /></div>
+        <div class="field"><label for="tax_value">Tax assessed value (approximate)</label><input type="text" id="tax_value" name="tax_value" inputmode="decimal" placeholder="$" /></div>
+        <div class="field"><label for="appraised_value">Appraised value or best estimate</label><input type="text" id="appraised_value" name="appraised_value" inputmode="decimal" placeholder="$" /></div>
+        <div class="field"><label for="first_mortgage">1st mortgage balance, if any</label><input type="text" id="first_mortgage" name="first_mortgage" inputmode="decimal" placeholder="$" /></div>
+        <div class="field"><label for="second_mortgage">2nd mortgage balance, if any</label><input type="text" id="second_mortgage" name="second_mortgage" inputmode="decimal" placeholder="$" /></div>
+        <div class="field"><label for="third_mortgage">3rd mortgage balance, if any</label><input type="text" id="third_mortgage" name="third_mortgage" inputmode="decimal" placeholder="$" /></div>
       </div>
       <div class="pq-actions"><button type="button" class="submit-btn" data-next>Continue</button><button type="button" class="pq-back" data-back>&larr; Back</button></div>
     </div>
 
     <div class="pq-step" id="s-type">
       <div class="pq-head"></div>
-      <div class="pq-title">Type of collateral / real estate available?</div>
-      <div class="pq-info"><p>Our smallest hard money loans generally start around $40,000, secured by a 1st or 2nd mortgage on Hawaii real estate on all islands.</p></div>
+      <div class="pq-title">What type of property would secure the loan?</div>
+      <div class="pq-info"><p>We lend on Hawaii real estate on all islands, secured by a 1st or 2nd mortgage. Loans generally start around $40,000.</p></div>
       <div class="field">
-        <span class="q">Check all that apply</span>
+        <span class="q">Select all that apply</span>
         <div class="opts">
           <label class="opt"><input type="checkbox" name="collateral_type[]" value="Residential home" /> Residential home</label>
           <label class="opt"><input type="checkbox" name="collateral_type[]" value="Rental home" /> Rental home</label>
@@ -331,10 +341,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="pq-step" id="s-sense">
       <div class="pq-head"></div>
-      <div class="pq-title">Does it make financial sense?</div>
+      <div class="pq-title">Do the terms work for you?</div>
       <div class="pq-info">
-        <p>Hawaii hard money costs <strong>1% per month, interest-only</strong>, and takes about <strong>15 business days</strong> to close, start to finish.</p>
-        <p>Hard money is fast and easy to obtain, but it is not cheap.</p>
+        <p>Our loans cost <strong>1% per month, interest-only</strong>, and typically close in about <strong>15 business days</strong>.</p>
+        <p>Hard money is fast and flexible, but it costs more than a traditional bank loan.</p>
       </div>
       <div class="pq-actions"><button type="button" class="submit-btn" data-next>That works for me</button><button type="button" class="pq-back" data-back>&larr; Back</button></div>
     </div>
@@ -343,22 +353,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="pq-step" id="s-contact">
       <div class="pq-head"></div>
-      <div class="pq-banner"><strong>Online Loan Application</strong>Good news &mdash; you may qualify. A few more details and you're done. Fields marked <span class="req">*</span> are required.</div>
+      <div class="pq-banner"><strong>Online Loan Application</strong>Good news &mdash; you may qualify. Share a few more details to finish. Fields marked <span class="req">*</span> are required.</div>
 
       <div class="field">
         <label for="referred_by">Who referred you?</label>
-        <span class="hint">Were you referred by a broker? Tell us what you can so we can thank them &mdash; name, email address, phone number, description. It is important for us to let them know we appreciate them!</span>
+        <span class="hint">Referred by a broker or someone else? Share their name, email, phone and a brief description so we can thank them.</span>
         <textarea id="referred_by" name="referred_by"></textarea>
       </div>
       <div class="field">
         <label for="borrower_name">Borrower name <span class="req">*</span></label>
-        <span class="hint">The legal name of the borrower</span>
+        <span class="hint">Full legal name of the borrower</span>
         <input type="text" id="borrower_name" name="borrower_name" autocomplete="name" required />
         <div class="err">Please enter the borrower's legal name.</div>
       </div>
       <div class="two-col">
         <div class="field">
-          <label for="email">Borrower email address <span class="req">*</span></label>
+          <label for="email">Email address <span class="req">*</span></label>
           <input type="email" id="email" name="email" autocomplete="email" required />
           <div class="err">Please enter a valid email address.</div>
         </div>
@@ -369,8 +379,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="field">
-        <label for="phone">Borrower phone number(s) <span class="req">*</span></label>
-        <span class="hint">Home, office, cell, etc.</span>
+        <label for="phone">Phone number(s) <span class="req">*</span></label>
+        <span class="hint">Home, office or cell</span>
         <input type="tel" id="phone" name="phone" autocomplete="tel" required />
         <div class="err">Please enter a phone number.</div>
       </div>
@@ -380,26 +390,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="pq-step" id="s-property">
       <div class="pq-head"></div>
       <div class="pq-title">The property</div>
-      <p class="sec-note">Hard money is secured by a first or second mortgage against a property.</p>
+      <p class="sec-note">Tell us about the property that will secure the loan.</p>
       <div class="field">
-        <label for="property_street">Street number and name of property <span class="req">*</span></label>
+        <label for="property_street">Property street address <span class="req">*</span></label>
         <span class="hint">Example: 123 Main Street</span>
         <input type="text" id="property_street" name="property_street" required />
         <div class="err">Please enter the property address.</div>
       </div>
       <div class="field">
-        <label for="property_city_state_zip">City, state and zip of the property <span class="req">*</span></label>
+        <label for="property_city_state_zip">City, state and zip code <span class="req">*</span></label>
         <input type="text" id="property_city_state_zip" name="property_city_state_zip" required />
         <div class="err">Please enter the city, state and zip.</div>
       </div>
       <div class="field">
-        <label for="title_owner">Who legally owns the subject property?</label>
-        <span class="hint">What name will we find on the title (person, couple, trust, business, etc.)</span>
+        <label for="title_owner">Who owns the property?</label>
+        <span class="hint">Enter the name on the title: an individual, couple, trust or business.</span>
         <input type="text" id="title_owner" name="title_owner" />
       </div>
       <div class="field">
-        <label for="cross_collateral">What other property do you have for &ldquo;cross-collateralization&rdquo;?</label>
-        <span class="hint">Sometimes, if the LTV (loan to value) is too high, we need to cross-collateralize with another property.</span>
+        <label for="cross_collateral">Do you have another property to offer as additional collateral?</label>
+        <span class="hint">If the loan-to-value (LTV) is high, we may ask you to cross-collateralize with a second property.</span>
         <textarea id="cross_collateral" name="cross_collateral"></textarea>
       </div>
       <div class="pq-actions"><button type="button" class="submit-btn" data-next>Continue</button><button type="button" class="pq-back" data-back>&larr; Back</button></div>
@@ -411,19 +421,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="sec-note">Tell us what you need and how you plan to repay it.</p>
       <div class="two-col">
         <div class="field">
-          <label for="min_loan">Minimum loan amount you will accept <span class="req">*</span></label>
+          <label for="min_loan">Minimum loan amount you'd accept <span class="req">*</span></label>
           <input type="text" id="min_loan" name="min_loan_amount" inputmode="decimal" placeholder="$" required />
           <div class="err">Please enter an amount.</div>
         </div>
         <div class="field">
-          <label for="max_loan">Maximum loan amount you desire <span class="req">*</span></label>
+          <label for="max_loan">Maximum loan amount you want <span class="req">*</span></label>
           <input type="text" id="max_loan" name="max_loan_amount" inputmode="decimal" placeholder="$" required />
           <div class="err">Please enter an amount.</div>
         </div>
       </div>
       <div class="field" data-radio="funds_needed">
         <span class="q">How long will you need the funds? <span class="req">*</span></span>
-        <span class="hint">Choose the one that is most true</span>
+        <span class="hint">Choose the closest answer</span>
         <div class="opts">
           <label class="opt"><input type="radio" name="funds_needed" value="Less than 2 months" /> Less than 2 months</label>
           <label class="opt"><input type="radio" name="funds_needed" value="2 to 4 months" /> From 2 to 4 months</label>
@@ -435,20 +445,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="err">Please choose one.</div>
       </div>
       <div class="field">
-        <label for="loan_purpose">Why do you (borrower) need the money? <span class="req">*</span></label>
-        <span class="hint">Please be specific.</span>
+        <label for="loan_purpose">What is the loan for? <span class="req">*</span></label>
+        <span class="hint">Be as specific as you can.</span>
         <textarea id="loan_purpose" name="loan_purpose" required></textarea>
         <div class="err">Please tell us why you need the funds.</div>
       </div>
       <div class="field">
-        <label for="repayment_plan">How do you plan to pay back the money? <span class="req">*</span></label>
-        <span class="hint">Please be specific.</span>
+        <label for="repayment_plan">How will you repay the loan? <span class="req">*</span></label>
+        <span class="hint">Be as specific as you can.</span>
         <textarea id="repayment_plan" name="repayment_plan" required></textarea>
         <div class="err">Please tell us your repayment plan.</div>
       </div>
       <div class="field">
-        <label for="other_info">Other information, other important notes, etc.</label>
-        <span class="hint">If the property is under construction, in foreclosure, owner under agreement of sale, oceanfront, an apartment unit (what % occupied), currently listed on the MLS for sale, etc. (be specific)</span>
+        <label for="other_info">Anything else we should know?</label>
+        <span class="hint">For example: under construction, in foreclosure, under an agreement of sale, oceanfront, an apartment unit (and % occupied), or currently listed for sale on the MLS.</span>
         <textarea id="other_info" name="other_info"></textarea>
       </div>
       <div class="pq-actions"><button type="button" class="submit-btn" data-next>Continue</button><button type="button" class="pq-back" data-back>&larr; Back</button></div>
@@ -457,10 +467,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="pq-step" id="s-final">
       <div class="pq-head"></div>
       <div class="pq-title">Almost done</div>
-      <p class="sec-note">Two quick things to be sure we're on the same page.</p>
+      <p class="sec-note">Please confirm two things before you submit.</p>
       <div class="field" data-radio="ack_retainer">
-        <span class="q">Do you understand that the real estate attorneys will require a $1,000 retainer/deposit to start the paperwork on this loan? <span class="req">*</span></span>
-        <span class="hint">Postal money order preferred; a check is acceptable but slows the process down. (Required only if we expect to fund the loan.) The retainer is $1,500 on the outer islands.</span>
+        <span class="q">Do you understand that our real estate attorneys require a $1,000 retainer to start the loan paperwork? <span class="req">*</span></span>
+        <span class="hint">Postal money order preferred; a check is accepted but slows the process. Required only if we expect to fund the loan. The retainer is $1,500 on the outer islands.</span>
         <div class="opts">
           <label class="opt"><input type="radio" name="ack_retainer" value="Yes" /> Yes</label>
           <label class="opt"><input type="radio" name="ack_retainer" value="No" /> No</label>
@@ -469,7 +479,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="err">Please choose one.</div>
       </div>
       <div class="field" data-radio="ack_timing">
-        <span class="q">Do you understand that it takes 15 business days (3 weeks) from the date of the retainer/deposit to get the money to you? <span class="req">*</span></span>
+        <span class="q">Do you understand it takes 15 business days (about 3 weeks) from the retainer date to receive your funds? <span class="req">*</span></span>
         <div class="opts">
           <label class="opt"><input type="radio" name="ack_timing" value="Yes" /> Yes</label>
           <label class="opt"><input type="radio" name="ack_timing" value="No" /> No</label>
@@ -478,12 +488,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="err">Please choose one.</div>
       </div>
       <div class="field">
-        <span class="q">Which of these will you be sending us?</span>
-        <span class="hint">Check all that apply. We'll follow up with you on where to send them.</span>
+        <span class="q">Which documents will you send us?</span>
+        <span class="hint">Select all that apply. We'll follow up on where to send them.</span>
         <div class="opts">
-          <label class="opt"><input type="checkbox" name="docs_to_send[]" value="Borrower 1003 filled out" /> Borrower 1003 filled out</label>
-          <label class="opt"><input type="checkbox" name="docs_to_send[]" value="Pictures of property" /> Pictures of property</label>
-          <label class="opt"><input type="checkbox" name="docs_to_send[]" value="Old or new appraisal" /> Old or new appraisal</label>
+          <label class="opt"><input type="checkbox" name="docs_to_send[]" value="Borrower 1003 filled out" /> Completed Borrower 1003</label>
+          <label class="opt"><input type="checkbox" name="docs_to_send[]" value="Pictures of property" /> Property photos</label>
+          <label class="opt"><input type="checkbox" name="docs_to_send[]" value="Old or new appraisal" /> Appraisal (old or new)</label>
           <label class="opt"><input type="checkbox" name="docs_to_send[]" value="Other important documents" /> Other important documents</label>
           <label class="opt"><input type="checkbox" id="docs_other_cb" /> Other: <input type="text" id="docs_other_txt" aria-label="Other documents" /></label>
         </div>
@@ -498,14 +508,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="pq-step pq-stop" id="s-stop-collateral">
       <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#FDF3E3"/><path d="M28 16v16M28 38v2" stroke="#C8840F" stroke-width="3.5" stroke-linecap="round"/></svg>
       <div class="pq-title">Real estate required</div>
-      <p>I'm sorry, but we don't do personal loans. You're welcome to call the office anyway at <a class="tel" href="tel:8085232000">808-523-2000</a> &mdash; we might know where to send you &mdash; but we only do real estate&ndash;based loans.</p>
+      <p>Sorry, we only make loans secured by real estate and don't offer personal loans. You're welcome to call us at <a class="tel" href="tel:8085232000">808-523-2000</a> &mdash; we may be able to point you in the right direction.</p>
       <div class="pq-actions"><button type="button" class="pq-ghost" data-restart>Change my answer</button><a class="pq-ghost" href="https://pacig.com">Back to site</a></div>
     </div>
 
     <div class="pq-step pq-stop" id="s-stop-small">
       <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#FDF3E3"/><path d="M28 16v16M28 38v2" stroke="#C8840F" stroke-width="3.5" stroke-linecap="round"/></svg>
       <div class="pq-title">Our smallest loans start around $40,000</div>
-      <p>I'm sorry, but we don't do loans that small. You're welcome to call the office anyway at <a class="tel" href="tel:8085232000">808-523-2000</a> &mdash; we might know where to send you &mdash; but we only do real estate&ndash;based loans, and our minimum fees don't make sense for a loan that small.</p>
+      <p>Sorry, we can't make loans that small &mdash; our minimum fees don't make sense below about $40,000. You're welcome to call us at <a class="tel" href="tel:8085232000">808-523-2000</a> &mdash; we may know where to send you.</p>
       <div class="pq-actions"><button type="button" class="pq-ghost" data-restart>Change my answer</button><a class="pq-ghost" href="https://pacig.com">Back to site</a></div>
     </div>
   </form>
@@ -513,10 +523,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="success" id="form-success" role="status">
       <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#EAF4EE"/><path d="M17 29l8 8 14-16" stroke="#2D7A4F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h2>Application received &mdash; thank you!</h2>
-      <p>We'll review your request and contact you shortly. For the fastest service, give the office a call about an hour from now at <a href="tel:8085232000">808-523-2000</a>.</p>
+      <p>We'll review your request and contact you shortly. For the fastest response, call our office in about an hour at <a href="tel:8085232000">808-523-2000</a>.</p>
     </div>
   </div>
-  <p class="form-fine" style="color:rgba(255,255,255,0.45)" id="pq-note">Nothing is sent to us until you press &ldquo;Submit application&rdquo; at the very end.</p>
+  <p class="form-fine" style="color:rgba(255,255,255,0.45)" id="pq-note">Nothing is sent until you press &ldquo;Submit application&rdquo; on the last step.</p>
 </div>
 
 <!-- PHOTO STRIP -->
