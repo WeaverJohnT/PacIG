@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client Onboarding Questionnaire – Pacific Investment Group | PAC I G Capital LLC</title>
+<style>
+  :root{
+    --navy:#14233c; --gold:#b8913a; --ink:#1f2937; --muted:#6b7280;
+    --line:#d9dee7; --bg:#f4f6f9; --field:#fbfcfe;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.45}
+  .page{max-width:860px;margin:32px auto;background:#fff;border-radius:10px;
+    box-shadow:0 4px 24px rgba(20,35,60,.10);overflow:hidden}
+  header{background:var(--navy);color:#fff;padding:34px 44px 28px;border-bottom:5px solid var(--gold)}
+  header .brand{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--gold);font-weight:600}
+  header h1{margin:6px 0 4px;font-size:28px;font-weight:700}
+  header p{margin:0;color:#c7d0de;font-size:14px}
+  form{padding:12px 44px 36px}
+  section{margin-top:30px}
+  h2{font-size:17px;color:var(--navy);margin:0 0 14px;padding-bottom:8px;
+     border-bottom:2px solid var(--line);display:flex;align-items:center;gap:10px}
+  h2 .num{background:var(--gold);color:#fff;width:26px;height:26px;border-radius:50%;
+     display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px}
+  .full{grid-column:1/-1}
+  label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px}
+  label small{font-weight:400;color:var(--muted)}
+  input[type=text],textarea{
+    width:100%;font:inherit;font-size:15px;color:var(--ink);background:var(--field);
+    border:1px solid var(--line);border-radius:6px;padding:9px 11px;transition:.15s}
+  textarea{resize:vertical;min-height:84px;overflow:hidden}
+  input:focus,textarea:focus{outline:none;border-color:var(--gold);
+     box-shadow:0 0 0 3px rgba(184,145,58,.2);background:#fff}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px;padding-top:20px;border-top:2px solid var(--line)}
+  button{font:inherit;font-weight:600;font-size:14px;border-radius:6px;padding:10px 18px;cursor:pointer;border:1px solid var(--navy)}
+  .primary{background:var(--navy);color:#fff}
+  .primary:hover{background:#1d3358}
+  .ghost{background:#fff;color:var(--navy)}
+  .ghost:hover{background:#eef1f6}
+  .note{font-size:12px;color:var(--muted);margin-top:10px}
+  @media (max-width:640px){
+    form{padding:8px 20px 28px} header{padding:26px 20px 22px}
+    .grid{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff}
+    .page{box-shadow:none;margin:0;border-radius:0;max-width:none}
+    .toolbar,.note{display:none}
+    header,h2 .num{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    section{break-inside:avoid}
+    input[type=text],textarea{border:1px solid #bbb;background:#fff}
+    textarea{resize:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="brand">Pacific Investment Group &nbsp;|&nbsp; PAC I G Capital LLC</div>
+    <h1>Client Onboarding Questionnaire</h1>
+    <p>Please complete each field. Your entries are saved automatically on this device.</p>
+  </header>
+
+  <form id="intake" autocomplete="off">
+
+    <section>
+      <h2><span class="num">1</span>Borrower Information</h2>
+      <div class="grid">
+        <div class="full"><label for="f1">Name / Entity</label><input type="text" id="f1" name="borrower_name"></div>
+        <div><label for="f2">Email</label><input type="text" id="f2" name="email"></div>
+        <div><label for="f3">Phone</label><input type="text" id="f3" name="phone"></div>
+        <div><label for="f4">Estimated FICO</label><input type="text" id="f4" name="fico"></div>
+        <div><label for="f5">Available Liquidity</label><input type="text" id="f5" name="liquidity"></div>
+        <div class="full"><label for="f6">Real Estate Investment Experience</label><textarea id="f6" name="experience"></textarea></div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">2</span>Property &amp; Loan Request</h2>
+      <div class="grid">
+        <div class="full"><label for="f7">Property Address</label><input type="text" id="f7" name="property_address"></div>
+        <div class="full"><label for="f8">Property Type / Number of Units</label><input type="text" id="f8" name="property_type"></div>
+        <div class="full"><label for="f9">Loan Purpose <small>(Purchase / Refinance / Bridge / Rehab / Construction / DSCR)</small></label><input type="text" id="f9" name="loan_purpose"></div>
+        <div><label for="f10">Requested Loan Amount</label><input type="text" id="f10" name="loan_amount"></div>
+        <div><label for="f11">Target Closing Date</label><input type="text" id="f11" name="closing_date"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">3</span>Property Financials</h2>
+      <div class="grid">
+        <div><label for="f12">Purchase Price / Date</label><input type="text" id="f12" name="purchase_price"></div>
+        <div><label for="f13">Estimated Current Value (As-Is)</label><input type="text" id="f13" name="as_is_value"></div>
+        <div class="full"><label for="f14">Existing Loan Balance / Other Liens</label><input type="text" id="f14" name="existing_loan"></div>
+        <div><label for="f15">Monthly Rental Income <small>(if applicable)</small></label><input type="text" id="f15" name="rental_income"></div>
+        <div><label for="f16">Occupancy <small>(if applicable)</small></label><input type="text" id="f16" name="occupancy"></div>
+        <div class="full"><label for="f17">Annual Property Taxes / Insurance / HOA</label><input type="text" id="f17" name="taxes_insurance_hoa"></div>
+        <div><label for="f18">Rehab or Construction Budget <small>(if applicable)</small></label><input type="text" id="f18" name="rehab_budget"></div>
+        <div><label for="f19">Estimated After Repair Value (ARV)</label><input type="text" id="f19" name="arv"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">4</span>Loan Purpose &amp; Exit Strategy</h2>
+      <div class="grid">
+        <div class="full"><label for="f20">Use of Funds</label><textarea id="f20" name="use_of_funds"></textarea></div>
+        <div class="full"><label for="f21">Exit Strategy <small>(Sale / Refinance / Long-Term Hold)</small></label><input type="text" id="f21" name="exit_strategy"></div>
+        <div class="full"><label for="f22">Anticipated Timeline</label><textarea id="f22" name="timeline"></textarea></div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="num">5</span>Additional Information</h2>
+      <div class="grid">
+        <div class="full"><label for="f23">Any prior lender declines or financing obstacles?</label><textarea id="f23" name="declines"></textarea></div>
+        <div class="full"><label for="f24">Currently working with another lender or broker? <small>(Yes / No)</small></label><input type="text" id="f24" name="other_lender"></div>
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <button type="button" class="primary" onclick="window.print()">Print / Save as PDF</button>
+      <button type="button" class="ghost" id="clear">Clear Form</button>
+    </div>
+    <p class="note">Tip: choose “Save as PDF” in the print window to keep a copy of your completed answers.</p>
+  </form>
+</div>
+
+<script>
+(function(){
+  var KEY='vault_lenders_intake_v1';
+  var fields=document.querySelectorAll('input[type=text],textarea');
+  function grow(el){ if(el.tagName==='TEXTAREA'){ el.style.height='auto'; el.style.height=Math.max(el.scrollHeight,84)+'px'; } }
+  var data={};
+  try{ data=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  fields.forEach(function(el){
+    if(data[el.id]) el.value=data[el.id];
+    grow(el);
+    el.addEventListener('input',function(){
+      grow(el); data[el.id]=el.value;
+      try{ localStorage.setItem(KEY,JSON.stringify(data)); }catch(e){}
+    });
+  });
+  window.addEventListener('beforeprint',function(){ fields.forEach(grow); });
+  document.getElementById('clear').addEventListener('click',function(){
+    if(!confirm('Clear all answers?')) return;
+    fields.forEach(function(el){ el.value=''; grow(el); });
+    data={}; try{ localStorage.removeItem(KEY); }catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
