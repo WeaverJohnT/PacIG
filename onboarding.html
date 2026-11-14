@@ -41,6 +41,21 @@
     }
     textarea { min-height: 88px; resize: vertical; }
     input:focus, textarea:focus { outline: none; border-color: var(--amber); box-shadow: 0 0 0 3px rgba(200,132,15,.2); background: #fff; }
+    .hint { background: #eef3f8; border-left: 4px solid var(--amber); border-radius: 6px; padding: 10px 14px; font-size: 14px; color: var(--navy); }
+    .radios { display: flex; flex-wrap: wrap; gap: 10px; }
+    label.rad { display: inline-block; position: relative; margin: 0; font-size: 15px; cursor: pointer; }
+    .rad input { position: absolute; opacity: 0; }
+    .rad span { display: inline-block; min-width: 56px; text-align: center; padding: 10px 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--field); font-weight: 600; color: var(--navy); transition: .15s; }
+    .rad input:checked + span { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .rad input:focus-visible + span { box-shadow: 0 0 0 3px rgba(200,132,15,.35); }
+    .deal-row { display: grid; grid-template-columns: 62px 1.4fr 1.2fr .9fr; gap: 10px; align-items: center; margin-top: 10px; }
+    .dn { font-weight: 600; color: var(--navy); font-size: 14.5px; }
+    @media (max-width: 640px) { .deal-row { grid-template-columns: 1fr; padding-bottom: 8px; border-bottom: 1px dashed var(--line); } }
+    .secure { margin-top: 34px; padding-top: 24px; border-top: 2px solid var(--line); text-align: center; }
+    .secure p { color: var(--muted); font-size: 14.5px; margin-bottom: 14px; }
+    a.secure-btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 16.5px; color: #fff; background: var(--navy); border-radius: 10px; padding: 14px 26px; transition: .15s; }
+    a.secure-btn:hover { background: var(--navy-mid); }
+    a.secure-btn:focus-visible { outline: 3px solid var(--amber-bright); outline-offset: 2px; }
     .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
     button.submit { margin-top: 30px; width: 100%; font: inherit; font-weight: 700; font-size: 17px; padding: 15px; border: 0; border-radius: 10px; background: var(--amber-bright); color: var(--navy); cursor: pointer; }
     button.submit:hover { filter: brightness(.96); }
@@ -74,8 +89,21 @@
             <div class="full"><label for="f1">Name / Entity <span class="req">*</span></label><input type="text" id="f1" name="name" autocomplete="name" /></div>
             <div><label for="f2">Email <span class="req">*</span></label><input type="email" id="f2" name="email" autocomplete="email" /></div>
             <div><label for="f3">Phone</label><input type="tel" id="f3" name="Phone" autocomplete="tel" /></div>
-            <div><label for="f4">Estimated FICO</label><input type="text" id="f4" name="Estimated FICO" inputmode="numeric" /></div>
+            <div><label for="f4">Credit Score <small>(estimated FICO)</small></label><input type="text" id="f4" name="Estimated FICO" inputmode="numeric" /></div>
             <div><label for="f5">Available Liquidity</label><input type="text" id="f5" name="Available Liquidity" /></div>
+            <div><label for="f25">Cash Reserves <small>(funds left after your down payment and closing costs)</small></label><input type="text" id="f25" name="Cash Reserves After Closing" /></div>
+            <div><label for="f33">How many principals / borrowers are on this loan?</label><input type="text" id="f33" name="Number of Principals / Borrowers on This Loan" inputmode="numeric" /></div>
+            <div class="full"><label id="deals-lbl">How many similar deals have you completed in the last 36 months? <small>(similar in size, cost and type)</small></label>
+              <div class="radios" role="radiogroup" aria-labelledby="deals-lbl"><label class="rad"><input type="radio" name="Similar Deals Completed in Last 36 Months" value="0" /><span>0</span></label><label class="rad"><input type="radio" name="Similar Deals Completed in Last 36 Months" value="1" /><span>1</span></label><label class="rad"><input type="radio" name="Similar Deals Completed in Last 36 Months" value="2" /><span>2</span></label><label class="rad"><input type="radio" name="Similar Deals Completed in Last 36 Months" value="3" /><span>3</span></label><label class="rad"><input type="radio" name="Similar Deals Completed in Last 36 Months" value="4" /><span>4</span></label><label class="rad"><input type="radio" name="Similar Deals Completed in Last 36 Months" value="5" /><span>5</span></label><label class="rad"><input type="radio" name="Similar Deals Completed in Last 36 Months" value="5+" /><span>5+</span></label></div></div>
+            <div class="full hint"><strong>What we look for:</strong> We want you or the other principals / borrowers on this new loan to have experience with past projects similar in size, cost and type (ground-up construction, fix &amp; flip, rehab, buy &amp; hold, etc.). Ideally that means at least three completed deals in the last 36 months, with the principals / borrowers on title, either personally or as owners of the entity that held title.</div>
+            <div class="full" id="deal-table" style="display:none">
+              <label>For each deal, how many of the principals / borrowers on this loan were on title, either personally or as owners of the entity on title? <small>(If you did more than five, list your five most recent.)</small></label>
+              <div class="deal-row"><span class="dn">Deal 1</span><input type="text" name="Deal 1 - Property" placeholder="Property address (optional)" aria-label="Deal 1 property address" /><input type="text" name="Deal 1 - Name on Title" placeholder="Person or LLC on title (optional)" aria-label="Deal 1 name on title" /><input type="text" name="Deal 1 - Principals / Borrowers on Title" placeholder="# of principals / borrowers" inputmode="numeric" aria-label="Deal 1 number of principals / borrowers on title" /></div>
+              <div class="deal-row"><span class="dn">Deal 2</span><input type="text" name="Deal 2 - Property" placeholder="Property address (optional)" aria-label="Deal 2 property address" /><input type="text" name="Deal 2 - Name on Title" placeholder="Person or LLC on title (optional)" aria-label="Deal 2 name on title" /><input type="text" name="Deal 2 - Principals / Borrowers on Title" placeholder="# of principals / borrowers" inputmode="numeric" aria-label="Deal 2 number of principals / borrowers on title" /></div>
+              <div class="deal-row"><span class="dn">Deal 3</span><input type="text" name="Deal 3 - Property" placeholder="Property address (optional)" aria-label="Deal 3 property address" /><input type="text" name="Deal 3 - Name on Title" placeholder="Person or LLC on title (optional)" aria-label="Deal 3 name on title" /><input type="text" name="Deal 3 - Principals / Borrowers on Title" placeholder="# of principals / borrowers" inputmode="numeric" aria-label="Deal 3 number of principals / borrowers on title" /></div>
+              <div class="deal-row"><span class="dn">Deal 4</span><input type="text" name="Deal 4 - Property" placeholder="Property address (optional)" aria-label="Deal 4 property address" /><input type="text" name="Deal 4 - Name on Title" placeholder="Person or LLC on title (optional)" aria-label="Deal 4 name on title" /><input type="text" name="Deal 4 - Principals / Borrowers on Title" placeholder="# of principals / borrowers" inputmode="numeric" aria-label="Deal 4 number of principals / borrowers on title" /></div>
+              <div class="deal-row"><span class="dn">Deal 5</span><input type="text" name="Deal 5 - Property" placeholder="Property address (optional)" aria-label="Deal 5 property address" /><input type="text" name="Deal 5 - Name on Title" placeholder="Person or LLC on title (optional)" aria-label="Deal 5 name on title" /><input type="text" name="Deal 5 - Principals / Borrowers on Title" placeholder="# of principals / borrowers" inputmode="numeric" aria-label="Deal 5 number of principals / borrowers on title" /></div>
+            </div>
             <div class="full"><label for="f6">Real Estate Investment Experience</label><textarea id="f6" name="Real Estate Investment Experience"></textarea></div>
           </div>
         </section>
@@ -99,6 +127,7 @@
             <div><label for="f12">Purchase Price / Date</label><input type="text" id="f12" name="Purchase Price / Date" /></div>
             <div><label for="f13">Estimated Current Value (As-Is)</label><input type="text" id="f13" name="Estimated Current Value (As-Is)" /></div>
             <div class="full"><label for="f14">Existing Loan Balance / Other Liens</label><input type="text" id="f14" name="Existing Loan Balance / Other Liens" /></div>
+            <div class="full"><label for="f30">How much do you plan to put down? <small>($ amount or % of purchase price)</small></label><input type="text" id="f30" name="Planned Down Payment" /></div>
             <div><label for="f15">Monthly Rental Income <small>(if applicable)</small></label><input type="text" id="f15" name="Monthly Rental Income" /></div>
             <div><label for="f16">Occupancy <small>(if applicable)</small></label><input type="text" id="f16" name="Occupancy" /></div>
             <div class="full"><label for="f17">Annual Property Taxes / Insurance / HOA</label><input type="text" id="f17" name="Annual Property Taxes / Insurance / HOA" /></div>
@@ -122,6 +151,8 @@
           <h2><span class="num">5</span>Additional Information</h2>
           <div class="grid">
             <div class="full"><label for="f23">Any prior lender declines or financing obstacles?</label><textarea id="f23" name="Prior Lender Declines or Financing Obstacles"></textarea></div>
+            <div class="full"><label for="f31">Can you provide a current personal financial statement? <small>(Yes / No &mdash; not required to submit this form, but it helps us move faster. We will tell you how to send it securely.)</small></label>
+              <input type="text" id="f31" name="Can Provide Personal Financial Statement" list="yesno" /></div>
             <div class="full"><label for="f24">Currently working with another lender or broker? <small>(Yes / No)</small></label>
               <input type="text" id="f24" name="Working With Another Lender or Broker" list="yesno" />
               <datalist id="yesno"><option value="Yes"><option value="No"></datalist></div>
@@ -135,6 +166,13 @@
       <div class="success" id="ok">
         <h2>Thank you!</h2>
         <p>We received your questionnaire and will be in touch shortly. If anything is urgent, call us at <strong>808-523-2000</strong>.</p>
+      </div>
+          <div class="secure">
+        <p>Ready to send documents? Upload them through our private, encrypted portal. Please do not email sensitive documents.</p>
+        <a class="secure-btn" href="https://upload.pacig.com/?c=pigc" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+          Submit secure encrypted documents here
+        </a>
       </div>
     </div>
 
@@ -152,6 +190,22 @@
     var c = new URLSearchParams(location.search).get('c');
     if (c) document.getElementById('f1').value = c.slice(0, 120);
   } catch (e) {}
+
+  var RADIO = 'input[name="Similar Deals Completed in Last 36 Months"]';
+  var dealTable = document.getElementById('deal-table');
+  var dealRows = dealTable.querySelectorAll('.deal-row');
+  function showRows() {
+    var c = form.querySelector(RADIO + ':checked');
+    var n = c ? (c.value === '5+' ? 5 : parseInt(c.value, 10) || 0) : 0;
+    dealTable.style.display = n > 0 ? 'block' : 'none';
+    dealRows.forEach(function (r, i) {
+      var on = i < n;
+      r.style.display = on ? '' : 'none';
+      r.querySelectorAll('input').forEach(function (x) { x.disabled = !on; });
+    });
+  }
+  form.querySelectorAll(RADIO).forEach(function (r) { r.addEventListener('change', showRows); });
+  showRows();
 
   function grow(t) { t.style.height = 'auto'; t.style.height = Math.max(88, t.scrollHeight + 2) + 'px'; }
   form.querySelectorAll('textarea').forEach(function (t) { t.addEventListener('input', function () { grow(t); }); });
